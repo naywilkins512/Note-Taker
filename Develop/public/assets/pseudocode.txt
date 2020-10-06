@@ -1,6 +1,0 @@
-// to write a new id to each note:
-
-//1 make an empty array to hold the notes.
-//2 make a for loop that loops through the array of notes at i
-//3 make a variable (maybe newNote.id = noteArray[i] +1 ) that is equal to the notes index in the array 
-//4 append it to the end of the note url

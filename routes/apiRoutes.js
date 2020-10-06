@@ -19,7 +19,7 @@ module.exports = function(app) {
     }
     notes.push(newNote);
     console.log(newNote)
-    return newNote;
+    return res.json(newNote);
     
   });
 
@@ -30,7 +30,7 @@ app.delete("/api/notes/:id", function (req, res) {
   for (let i = 0; i < notes.length; i++) {
     if (noteid === notes[i].id) {
       notes.splice(i, 1);
-      return notes;
+      return res.json(notes);
     }
   }
 

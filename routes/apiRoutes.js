@@ -18,8 +18,11 @@ module.exports = function(app) {
       text: req.body.text
     }
     notes.push(newNote);
-    console.log(newNote)
-    return res.json(newNote);
+    fs.writeFile("./db/db.json", JSON.stringify(notes), function(err){
+      if (err) throw err;
+      return res.json(newNote);
+    })
+    
     
   });
 
@@ -30,7 +33,10 @@ app.delete("/api/notes/:id", function (req, res) {
   for (let i = 0; i < notes.length; i++) {
     if (noteid === notes[i].id) {
       notes.splice(i, 1);
-      return res.json(notes);
+      fs.writeFile("./db/db.json", JSON.stringify(notes), function(err){
+        if (err) throw err;
+        return res.json(notes);
+      })  
     }
   }
 

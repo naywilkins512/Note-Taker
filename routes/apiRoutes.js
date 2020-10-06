@@ -1,6 +1,6 @@
 
 var fs = require("fs");
-var notes = require("../../../Develop/db/db.json");
+var notes = require("../db/db.json");
 const { v4: uuidv4 } = require('uuid');
 let path = require("path");
 const { json } = require("body-parser");
